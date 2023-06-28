@@ -26,4 +26,4 @@ jobs:
         run: dotnet test
 
       - name: Coverage
-        run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+        run: dotnet test --collect:"XPlat Code Coverage"
