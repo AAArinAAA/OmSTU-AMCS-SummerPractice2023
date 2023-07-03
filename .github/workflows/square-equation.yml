@@ -28,3 +28,8 @@ jobs:
 
       - name: Unit-Test
         run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+
+      - name: Codecov
+        uses: codecov/codecov-action@v3
+        with: 
+          token: 3b995125-0f1d-430b-aeb8-6e940ced4790
