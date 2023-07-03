@@ -23,6 +23,11 @@ public class SquareEquation
         }
         else
         {
+            if (b==0)
+            {
+                Result1[0] = Math.Sqrt(D)/2;
+                Result1[1]= c/Result1[0];
+            }
             double[] Result3 = new double[2];
             Result3[0] = -(b + Math.Sign(b) * Math.Sqrt(D)) / 2;
             Result3[1] = c / Result3[0];
