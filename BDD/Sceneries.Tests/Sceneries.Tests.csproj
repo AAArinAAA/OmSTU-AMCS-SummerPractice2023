@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="\SquareEquationLib.csproj" />
+    <ProjectReference Include="/root/OmSTU-AMCS-SummerPractice2023/SquareEquationLib/SquareEquationLib.csproj" />
   </ItemGroup>
 
 </Project>
