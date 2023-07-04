@@ -3,7 +3,7 @@ name: BDD
 
 on:
   push:
-    branches: ["BDD"]
+    branches: ["Gherkin"]
 
 jobs:
   build:
