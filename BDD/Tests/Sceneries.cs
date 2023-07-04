@@ -1,11 +1,11 @@
 ﻿namespace BDD.Tests;
+using Xunit;
 using SquareEquationLib;
 using TechTalk.SpecFlow;
 
 [Binding]
 public class StepDefinitions
 {
-    private double Epsilon = 1e-9;
     private double[] ratio = new double[3];
     private double[] res = new double[0];
     private Exception excep = new Exception();
