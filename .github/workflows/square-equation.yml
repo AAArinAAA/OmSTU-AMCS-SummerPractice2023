@@ -1,9 +1,9 @@
-name: square equation test
+name: BDD
 
 
 on:
   push:
-    branches: ["Scenarios"]
+    branches: ["Scenaries"]
 
 jobs:
   build:
