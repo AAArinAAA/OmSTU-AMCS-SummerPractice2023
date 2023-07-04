@@ -3,7 +3,7 @@ name: BDD
 
 on:
   push:
-    branches: ["Scenaries"]
+    branches: ["BDD"]
 
 jobs:
   build:
