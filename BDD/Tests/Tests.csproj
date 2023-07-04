@@ -10,4 +10,8 @@
     <PackageReference Include="SpecFlow.XUnit" Version="3.9.74" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="/root/OmSTU-AMCS-SummerPractice2023/SquareEquationLib/SquareEquationLib.csproj" />
+  </ItemGroup>
+
 </Project>
