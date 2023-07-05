@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 class Student
 {
@@ -11,35 +11,45 @@ class Student
 class Program
 {
     static void Main(string[] args)
-    {
-        string inputFilePath = args[0]; 
-        string outputFilePath = args[1]; 
+    {        
+        for (int i=0; i<6; i++)
+        {
+            if (i%2==0)
+            {
+                string inputFilePath = args[i]; 
+                string outputFilePath = args[i+1]; 
 
-        string jsonData = File.ReadAllText(inputFilePath);
-        dynamic input = JsonConvert.DeserializeObject(jsonData) ?? new JObject();
+                string jsonData = File.ReadAllText(inputFilePath);
+                dynamic input = JsonConvert.DeserializeObject(jsonData) ?? new JObject();
 
-        List<Student> students = input.data.ToObject<List<Student>>();
-        string taskName = input.taskName;
-        List<dynamic> answer;
-        switch (taskName){
-            case "GetStudentsWithHighestGPA":
-                answer = GetStudentsWithHighestGPA(students);
-                break;
-            case "CalculateGPAByDiscipline":
-                answer = CalculateGPAByDiscipline(students);
-                break;
-            case "GetBestGroupsByDiscipline":
-                answer = GetBestGroupsByDiscipline(students);
-                break;
-            default:
-                answer = new List<dynamic>();
-                break;
-        } 
-        var result = new { Response = answer };
+                List<Student> students = input.data.ToObject<List<Student>>();
+                string taskName = input.taskName;
+                List<dynamic> answer;
+                switch (taskName)
+                {
+                case "GetStudentsWithHighestGPA":
+                    answer = GetStudentsWithHighestGPA(students);
+                    break;
+                case "CalculateGPAByDiscipline":
+                    answer = CalculateGPAByDiscipline(students);
+                    break;
+                case "GetBestGroupsByDiscipline":
+                    answer = GetBestGroupsByDiscipline(students);
+                    break;
+                default:
+                    answer = new List<dynamic>();
+                    break;
+                } 
+                var result = new { Response = answer };
 
-        string outputJson = JsonConvert.SerializeObject(result, Formatting.Indented);
+                string outputJson = JsonConvert.SerializeObject(result, Formatting.Indented);
 
-        File.WriteAllText(outputFilePath, outputJson);
+                File.WriteAllText(outputFilePath, outputJson);
+            }
+            
+        }
+       
+       
     }
 
     static List<dynamic> GetStudentsWithHighestGPA(List<Student> students)
